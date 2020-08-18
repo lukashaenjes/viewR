@@ -1,0 +1,4 @@
+Name: View current selection
+Description: Evaluates and views the current selection in the Viewer
+Binding: view_selection
+Interactive: false

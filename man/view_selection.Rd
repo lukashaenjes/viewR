@@ -7,5 +7,12 @@
 view_selection()
 }
 \description{
-View selected lines in RStudio data viewer
+This function unfolds its full potential when it's mapped to a
+  sensible keyboard shortcut: In RStudio, navigate to 'Tools' > 'Modify
+  Keyboard Shortcuts' and then search for 'View current selection'. Click on
+  the 'Shortcut' field to assign a new keyboard shortcut.
+}
+\seealso{
+For a more detailed overview and a demo, please check the
+  \href{https://github.com/lukasfeick-sw/viewR}{GitHub repository}.
 }

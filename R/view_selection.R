@@ -1,10 +1,17 @@
-#' View selected lines in RStudio data viewer
+#' @title View selected lines in RStudio data viewer
+#'
+#' @description This function unfolds its full potential when it's mapped to a
+#'   sensible keyboard shortcut: In RStudio, navigate to 'Tools' > 'Modify
+#'   Keyboard Shortcuts' and then search for 'View current selection'. Click on
+#'   the 'Shortcut' field to assign a new keyboard shortcut.
 #'
 #' @importFrom rstudioapi getSourceEditorContext sendToConsole
 #' @importFrom magrittr %>%
 #'
-#' @export
+#' @seealso For a more detailed overview and a demo, please check the
+#'   \href{https://github.com/lukasfeick-sw/viewR}{GitHub repository}.
 #'
+#' @export
 
 view_selection <- function(){
 
@@ -43,8 +50,3 @@ view_selection <- function(){
   )
 
 }
-
-# test <- mtcars %>%
-#   dplyr::bind_rows(mtcars) %>%
-#   dplyr::bind_rows(mtcars) %>%
-#   tibble::as_tibble()

@@ -21,8 +21,8 @@ view_selection <- function(){
   # extract selected lines, removing whitespace
   selection <- trimws(context$selection[[1]]$text)
 
-  # remove everything after the last closing bracket
-  selection <- unlist(
+  # remove everything after the last closing bracket (e.g. trailing pipe)
+  selection_stripped <- unlist(
     regmatches(selection,
                regexec("[^)]+$",
                        selection,
@@ -31,21 +31,44 @@ view_selection <- function(){
     )
   )[1]
 
-  # extract the title: everything before the first '%' (start of the pipe)
-  title <- trimws(unlist(
-    regmatches(selection,
-               regexec("^[^%]+",
-                       selection,
-                       perl = TRUE)
-    )
-  ))
+  # if only a single line / dataframe without any brackets is selected,
+  # selection_stripped will be empty, so keep everything before first %
+  if (nchar(selection_stripped) == 0) {
+
+    selection_stripped <- trimws(unlist(
+      regmatches(selection,
+                 regexec("^[^%]+",
+                         selection,
+                         perl = TRUE)
+      )
+    ))
+
+  }
+
+  # get parse data
+  # parsing may fail if there is a trailing pipe in the comments
+  parsed <- tryCatch({
+
+    getParseData(parse(text = selection_stripped, keep.source = TRUE))
+
+  }, error = function(e){
+
+    # in case of a trailing non-stripped pipe, simply add a new line
+    # and pipe into an `invisible()` so the parsing works out
+    inv <- paste0(selection_stripped, "\n invisible()")
+    getParseData(parse(text = inv, keep.source = TRUE))
+
+  })
+
+  # the title will be the first "SYMBOL"
+  title <- parsed[parsed$token == "SYMBOL", "text"][1]
 
   # append title
   title <- paste0(title, "_view")
 
   # paste `View` call and send to console
   sendToConsole(
-    paste0(selection,
+    paste0(selection_stripped,
            " %>%\n  View(title = '", title,"')")
   )
 

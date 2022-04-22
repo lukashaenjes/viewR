@@ -7,6 +7,7 @@
 #'
 #' @importFrom rstudioapi getSourceEditorContext sendToConsole
 #' @importFrom magrittr %>%
+#' @importFrom utils getParseData
 #'
 #' @seealso For a more detailed overview and a demo, please check the
 #'   \href{https://github.com/lukasfeick-sw/viewR}{GitHub repository}.

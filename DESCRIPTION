@@ -1,22 +1,22 @@
 Package: viewR
-Type: Package
-Title: Invoke the RStudio data viewer in a pipe-friendly fashion
-Version: 0.1.0
+Title: Interactively invoke the RStudio Data Viewer in a Pipe-Friendly
+    Fashion
+Version: 0.2.0
 Authors@R: 
     person(given = "Lukas",
            family = "Feick",
            role = c("aut", "cre"),
            email = "lukas.feick@statworx.com")
 Maintainer: Lukas Feick <lukas.feick@statworx.com>
-Description: viewR lets you invoke the RStudio data viewer directly
-    from a selection of piped code. This makes it easy to view the 
-    current selection without having it to assign to a variable first.
-    Combined with a sensible shortcut, you can seamlessly send the selected
-    lines to the data viewer instead of executing them into the console.
+Description: viewR lets you invoke the RStudio data viewer directly from a
+    selection of (piped) code. This makes it easy to view the current
+    selection without having it to assign to a variable first. Combined
+    with a sensible shortcut, you can seamlessly send the selected lines
+    to the data viewer instead of executing them into the console.
 License: MIT + file LICENSE
-Encoding: UTF-8
-LazyData: true
-RoxygenNote: 7.1.0
 Imports: 
     magrittr,
     rstudioapi
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1

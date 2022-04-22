@@ -1,12 +1,12 @@
-# viewR
+# viewR: A pipe-friendly way to invoke the `View()` function
 
-## A pipe-friendly way to invoke the `View()` function
+Are you a fan of both `magrittr` pipes *and* the RStudio data viewer? Especially when doing EDA, you'll oftentimes want to casually view the current "state" of your transformed data frame without assigning it to a variable each time. In that case you'd also need to select the variable and press <kbd>F2</kbd>, or <kbd>CMD</kbd> + Click on it in the Source Editor, or click on it the Environment pane -- tedious!
 
-Are you a fan of both `magrittr` pipes *and* the RStudio data viewer? Especially when doing EDA, you'll oftentimes want to casually view the current "state" of your transformed data frame without assigning it to a variable each time. (In the latter case you'd also need to select the variable and press <kbd>F2</kbd>, or <kbd>CMD</kbd> + Click on it in the Source Editor, or click on it the Environment pane.)
+Printing a `data.frame` to the console may be undesirable for formatting reasons and interrupts your workflow because you need to switch panes to scroll through the output.
 
-With `viewR`, you can seamlessly view the currently selected lines of code in the RStudio data viewer: Simply select the lines (just as you always would) and then, instead of executing them (which will print the result to the console and may be undesirable for formatting reasons), you can assign an RStudio shortcut to `view_selection` (the workhorse of `viewR`) and immediately view the current selection in the data viewer, all while keeping your hands on the keyboard. The title of the new data tab is inferred from the first element in the chain and suffixed with a `_view`.
+With `viewR`, you can seamlessly view the currently selected lines of code in the RStudio data viewer: Simply select the lines (just as you always would) and then, instead of executing them, hit the `viewR` shortcut to immediately send the evaluated selection to the RStudio data viewer.
 
-You can even keep the trailing `%>%` selected, making it easy to keyboard-navigate through your code and seamlessly invoke `viewR` on "mid-code" selections without any intermediate steps.
+You can even keep the trailing pipe `%>%` and leading or in-line comments `#` selected, making it easy to keyboard-navigate through your code and seamlessly invoke `viewR` on "mid-code" selections -- without any intermediate steps and all while keeping your hands on the keyboard. The title of the new data tab is inferred from the first element in the chain and suffixed with a `_view`.
 
 ## Demo
 
@@ -17,8 +17,8 @@ You can even keep the trailing `%>%` selected, making it easy to keyboard-naviga
 Install `viewR` from GitHub with
 
 ```r
-# install.packages("devtools")
-devtools::install_github("lukasfeick-sw/viewR")
+# install.packages("remotes")
+remotes::install_github("lukasfeick-sw/viewR")
 ```
 
 ## Recommended use

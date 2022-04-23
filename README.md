@@ -34,7 +34,7 @@ remotes::install_github("lukasfeick-sw/viewR")
 
 ## Backend
 
-The [backend](https://github.com/lukasfeick-sw/viewR/blob/master/R/view_selection.R) is, really, as simple as it gets: `view_selection` relies heavily on the [`rstudioapi`](https://github.com/rstudio/rstudioapi) package. It captures the currently selected lines, cleans them up, extracts the title to be used for the Viewer tab, adds a `View()` call at the end and then sends the result to the console where it's executed, invoking the data viewer.
+The [backend](https://github.com/lukasfeick-sw/viewR/blob/master/R/view_selection.R) relies heavily on the [`rstudioapi`](https://github.com/rstudio/rstudioapi) package. It captures the currently selected lines, cleans them up, extracts the title to be used for the Viewer tab, adds a `View()` call at the end and then sends the result to the console where it's executed, invoking the data viewer.
 
 ## Hex sticker
 

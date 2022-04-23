@@ -1,4 +1,6 @@
-# viewR: A pipe-friendly way to invoke the `View()` function
+# viewR <img src='man/figures/viewR.png' align="right" height="139" />
+
+## A pipe-friendly way to invoke the `View()` function
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/lukasfeick-sw/viewR/actions/workflows/r-cmd-check.yml/badge.svg)](https://github.com/lukasfeick-sw/viewR/actions/workflows/r-cmd-check.yml)
@@ -34,3 +36,6 @@ remotes::install_github("lukasfeick-sw/viewR")
 
 The [backend](https://github.com/lukasfeick-sw/viewR/blob/master/R/view_selection.R) is, really, as simple as it gets: `view_selection` relies heavily on the [`rstudioapi`](https://github.com/rstudio/rstudioapi) package. It captures the currently selected lines, cleans them up, extracts the title to be used for the Viewer tab, adds a `View()` call at the end and then sends the result to the console where it's executed, invoking the data viewer.
 
+## Hex sticker
+
+The hex sticker was created with the [hexSticker](https://github.com/GuangchuangYu/hexSticker) package.

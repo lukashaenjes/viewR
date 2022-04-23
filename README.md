@@ -1,5 +1,9 @@
 # viewR: A pipe-friendly way to invoke the `View()` function
 
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/lukasfeick-sw/viewR/actions/workflows/r-cmd-check.yml/badge.svg)](https://github.com/lukasfeick-sw/viewR/actions/workflows/r-cmd-check.yml)
+<!-- badges: end -->
+
 Are you a fan of both `magrittr` pipes *and* the RStudio data viewer? Especially when doing EDA, you'll oftentimes want to casually view the current "state" of your transformed data frame without assigning it to a variable each time. In that case you'd also need to select the variable and press <kbd>F2</kbd>, or <kbd>CMD</kbd> + Click on it in the Source Editor, or click on it the Environment pane -- tedious!
 
 Printing a `data.frame` to the console may be undesirable for formatting reasons and interrupts your workflow because you need to switch panes to scroll through the output.

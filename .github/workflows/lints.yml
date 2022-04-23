@@ -8,7 +8,7 @@ jobs:
     env:
      LINTR_COMMENT_BOT: true
     steps:
-      - uses: checkout@v3
+      - uses: actions/checkout@v3
 
       - uses: r-lib/actions/setup-r@v2
 

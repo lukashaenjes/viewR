@@ -14,7 +14,7 @@
 #'
 #' @export
 
-view_selection <- function(){
+view_selection <- function() {
 
   # capture context
   context <- getSourceEditorContext()
@@ -52,7 +52,7 @@ view_selection <- function(){
 
     getParseData(parse(text = selection_stripped, keep.source = TRUE))
 
-  }, error = function(e){
+  }, error = function(e) {
 
     # in case of a trailing non-stripped pipe, simply add a new line
     # and pipe into an `invisible()` so the parsing works out
@@ -70,7 +70,7 @@ view_selection <- function(){
   # paste `View` call and send to console
   sendToConsole(
     paste0(selection_stripped,
-           " %>%\n  View(title = '", title,"')")
+           " %>%\n  View(title = '", title, "')")
   )
 
 }

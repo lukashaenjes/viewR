@@ -15,14 +15,14 @@ test_that("title_extraction_works", {
 
 test_that("parsing_fails_with_trailing_pipe_in_comments", {
 
-  string_1 <- "as.data.frame(iris) %>%\n  dplyr::select(1) %>% # this is a problem"
+  string_1 <- "as.data.frame(iris) %>%\n  dplyr::select(1) %>% # comment"
   expect_error(getParseData(parse(text = string_1, keep.source = TRUE)))
 
 })
 
 test_that("trailing_pipe_in_comments_can_be_fixed", {
 
-  string_1 <- "as.data.frame(mtcars) %>%\n  dplyr::select(1) %>% # this is a problem"
+  string_1 <- "as.data.frame(mtcars) %>%\n  dplyr::select(1) %>% # comment"
   invis <- paste0(string_1, "\n invisible()")
   res <- getParseData(parse(text = invis, keep.source = TRUE))
   title <- res[res$token == "SYMBOL", "text"][1]

@@ -7,13 +7,6 @@
 
 clean_selection <- function(x) {
 
-  # # issue warning in case of incomplete call (open paranthesis) at the end
-  # if (substr(selection, nchar(selection), nchar(selection)) == "(") {
-  #
-  #   warning("Removed incomplete trailing line from selected call: ")
-  #
-  # }
-
   # remove everything after the last closing bracket (e.g. trailing pipe)
   selection_stripped <- unlist(
     regmatches(x,

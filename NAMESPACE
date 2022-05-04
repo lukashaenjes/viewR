@@ -3,5 +3,6 @@
 export(view_selection)
 importFrom(magrittr,"%>%")
 importFrom(rstudioapi,getSourceEditorContext)
+importFrom(rstudioapi,isAvailable)
 importFrom(rstudioapi,sendToConsole)
 importFrom(utils,getParseData)

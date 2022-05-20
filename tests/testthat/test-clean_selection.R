@@ -16,3 +16,24 @@ test_that("viewR works on single-line selections", {
   expect_identical(res, "iris")
 
 })
+
+test_that("a warning is issued in case of truncated selection", {
+
+  string <- "iris %>%\n  head() %>%\n  filter("
+  withr::local_options(viewR.warn.truncated = TRUE)
+
+  res <- expect_warning(clean_selection(string))
+  expect_identical(res, "iris %>%\n  head()")
+
+})
+
+test_that("no warning is issued when warnings are disabled", {
+
+  string <- "iris %>%\n  head() %>%\n  filter("
+  withr::local_options(viewR.warn.truncated = FALSE)
+
+  res <- clean_selection(string)
+  expect_identical(res, "iris %>%\n  head()")
+
+})
+

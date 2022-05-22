@@ -5,3 +5,8 @@
 ^LICENSE\.md$
 ^demo\.R$
 ^viewr_demo\.gif$
+^\.github$
+^\.lintr$
+^misc$
+^\.renvignore$
+^\.github$

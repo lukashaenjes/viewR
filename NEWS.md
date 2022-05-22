@@ -1,3 +1,37 @@
+## version 0.3.0
+
+---
+
+
+### Warning in case of truncated selection
+
+- `viewR` now by default issues a warning if part of the selection was truncated before evaluation (e.g. due to incomplete selection).
+- For example, take the following code: 
+
+```
+iris %>% 
+   head() %>% 
+   filter(Sepal.Length > 5)
+```
+
+- If you now happen to accidentally only select the following incomplete part: 
+
+```
+iris %>% 
+   head() %>% 
+   filter(
+```
+
+- `viewR` will drop the last line and issue a warning: `Warning: Selection truncated! Removed the following part: ' %>% filter('`
+- This feature can be disabled by setting `options(viewR.warn.truncated = FALSE)`. Note that no warning is issued for truncated trailing pipes ` %>% ` because one of the core features of `viewR` is to be able to keep trailing pipes selected.
+
+
+### Backend and testing infrastructure
+
+- Refactor and modularize backend
+- Define additional tests in `tests/testthat/`
+
+
 ## version 0.2.0
 
 ---
@@ -19,9 +53,9 @@
 - Move from regex-based detection to parsing via `utils::getParseData()`
 
 
-### NEWS.md setup
+### NEWS.md Setup
 
-- Added `NEWS.md` creation with [newsmd](https://github.com/Dschaykib/newsmd)
+- Add `NEWS.md` creation with [newsmd](https://github.com/Dschaykib/newsmd)
 
 
 ## version 0.1.0

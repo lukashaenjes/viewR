@@ -7,7 +7,7 @@
 [![lints](https://github.com/lukasfeick-sw/viewR/actions/workflows/lints.yml/badge.svg?branch=main)](https://github.com/lukasfeick-sw/viewR/actions/workflows/lints.yml)
 <!-- badges: end -->
 
-Are you a fan of both `magrittr` pipes *and* the RStudio data viewer? Especially when doing EDA, you'll oftentimes want to casually view the current "state" of your transformed data frame without assigning it to a variable each time. In that case you'd also need to select the variable and press <kbd>F2</kbd>, or <kbd>CMD</kbd> + Click on it in the Source Editor, or click on it the Environment pane -- tedious!
+Are you a fan of both `magrittr` pipes *and* the RStudio data viewer? Especially when doing EDA, you'll oftentimes want to casually view the current "state" of your transformed data frame without assigning it to a variable each time. In that case you'd also need to select the variable and press <kbd>F2</kbd>, *or* <kbd>CMD</kbd> + Click on it in the Source Editor, *or* click on it the Environment pane -- tedious!
 
 Printing a `data.frame` to the console may be undesirable for formatting reasons and interrupts your workflow because you need to switch panes to scroll through the output.
 
@@ -30,7 +30,7 @@ remotes::install_github("lukasfeick-sw/viewR")
 
 ## Recommended use
 
-`viewR` unfolds its full potential when it's mapped to a sensible keyboard shortcut, for example <kbd>CMD</kbd> + <kbd>Shift</kbd> + <kbd>V</kbd> (as in *V*iew). As for the source code, the necessary infrastructure for this is already in place: In RStudio, navigate to 'Tools' > 'Modify Keyboard Shortcuts' and then search for 'View current selection'. Click on the 'Shortcut' field to assign a new keyboard shortcut.
+`viewR` unfolds its full potential when it's mapped to a sensible keyboard shortcut, for example <kbd>CMD</kbd> + <kbd>Shift</kbd> + <kbd>V</kbd> (as in *V*iew). In RStudio, navigate to 'Tools' > 'Modify Keyboard Shortcuts' and then search for 'View current selection'. Click on the 'Shortcut' field to assign a new keyboard shortcut.
 
 ## Backend
 

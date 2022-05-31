@@ -5,6 +5,7 @@
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/lukasfeick-sw/viewR/actions/workflows/r-cmd-check.yml/badge.svg?branch=main)](https://github.com/lukasfeick-sw/viewR/actions/workflows/r-cmd-check.yml)
 [![lints](https://github.com/lukasfeick-sw/viewR/actions/workflows/lints.yml/badge.svg?branch=main)](https://github.com/lukasfeick-sw/viewR/actions/workflows/lints.yml)
+[![Codecov test coverage](https://codecov.io/gh/lukasfeick-sw/viewR/branch/main/graph/badge.svg)](https://app.codecov.io/gh/lukasfeick-sw/viewR?branch=main)
 <!-- badges: end -->
 
 Are you a fan of both `magrittr` pipes *and* the RStudio data viewer? Especially when doing EDA, you'll oftentimes want to casually view the current "state" of your transformed data frame without assigning it to a variable each time. In that case you'd also need to select the variable and press <kbd>F2</kbd>, *or* <kbd>CMD</kbd> + Click on it in the Source Editor, *or* click on it the Environment pane -- tedious!

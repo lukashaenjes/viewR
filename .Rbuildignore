@@ -10,3 +10,4 @@
 ^misc$
 ^\.renvignore$
 ^\.github$
+^codecov\.yml$

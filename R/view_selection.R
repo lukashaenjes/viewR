@@ -14,9 +14,6 @@
 
 view_selection <- function() {
 
-  # TODO only works for whole console, not selection within console
-  # TODO check linebreaks in console
-
   # for testing purposes
   if (!isAvailable()) {
 

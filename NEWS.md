@@ -1,3 +1,9 @@
+## version 0.4.0
+
+---
+
+- `viewR` can now also be run directly from the RStudio console (currently only single-line prompts and no partial selections)
+
 ## version 0.3.0
 
 ---
@@ -8,7 +14,7 @@
 - `viewR` now by default issues a warning if part of the selection was truncated before evaluation (e.g. due to incomplete selection).
 - For example, take the following code: 
 
-```
+```r
 iris %>% 
    head() %>% 
    filter(Sepal.Length > 5)
@@ -16,7 +22,7 @@ iris %>%
 
 - If you now happen to accidentally only select the following incomplete part: 
 
-```
+```r
 iris %>% 
    head() %>% 
    filter(
@@ -30,6 +36,7 @@ iris %>%
 
 - Refactor and modularize backend
 - Define additional tests in `tests/testthat/`
+- Add code coverage tracking with [Codecov](https://app.codecov.io/gh/lukasfeick-sw/viewR?branch=main)
 
 
 ## version 0.2.0

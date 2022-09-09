@@ -5,7 +5,7 @@
 #'   Keyboard Shortcuts' and then search for 'View current selection'. Click on
 #'   the 'Shortcut' field to assign a new keyboard shortcut.
 #'
-#' @importFrom rstudioapi getSourceEditorContext isAvailable
+#' @importFrom rstudioapi getSourceEditorContext isAvailable getActiveDocumentContext getConsoleEditorContext
 #'
 #' @seealso For a more detailed overview and a demo, please check the
 #'   \href{https://github.com/lukasfeick-sw/viewR}{GitHub repository}.
@@ -14,11 +14,39 @@
 
 view_selection <- function() {
 
-  # capture context
-  context <- if (isAvailable()) getSourceEditorContext() else NULL
+  # TODO only works for whole console, not selection within console
+  # TODO check linebreaks in console
 
-  # extract selected lines, removing whitespace
-  selection <- if (!is.null(context)) trimws(context$selection[[1]]$text) else ""
+  # for testing purposes
+  if (!isAvailable()) {
+
+    context <- NULL
+    selection <- ""
+
+  } else {
+
+    # check whether console or editor is selected because selection needs to be
+    # extracted differently - if in console, document id will always be "#console"
+    is_editor <- getActiveDocumentContext()$id != "#console"
+
+    # capture context
+    if (is_editor) {
+
+      context <- getSourceEditorContext()
+
+      # extract selected lines, removing whitespace
+      selection <- trimws(context$selection[[1]]$text)
+
+    } else {
+
+      context <- getConsoleEditorContext()
+
+      # extract selected lines, removing whitespace
+      selection <- trimws(context$contents)
+
+    }
+
+  }
 
   # clean selection
   selection_cleaned <- clean_selection(selection)

@@ -5,7 +5,8 @@
 #'   Keyboard Shortcuts' and then search for 'View current selection'. Click on
 #'   the 'Shortcut' field to assign a new keyboard shortcut.
 #'
-#' @importFrom rstudioapi getSourceEditorContext isAvailable getActiveDocumentContext getConsoleEditorContext
+#' @importFrom rstudioapi getSourceEditorContext isAvailable
+#'   getActiveDocumentContext getConsoleEditorContext
 #'
 #' @seealso For a more detailed overview and a demo, please check the
 #'   \href{https://github.com/lukasfeick-sw/viewR}{GitHub repository}.

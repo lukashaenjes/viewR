@@ -1,4 +1,11 @@
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - dev
+  pull_request:
+    branches:
+      - main
+
 name: R-CMD-check
 
 jobs:

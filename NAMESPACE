@@ -2,6 +2,8 @@
 
 export(view_selection)
 importFrom(magrittr,"%>%")
+importFrom(rstudioapi,getActiveDocumentContext)
+importFrom(rstudioapi,getConsoleEditorContext)
 importFrom(rstudioapi,getSourceEditorContext)
 importFrom(rstudioapi,isAvailable)
 importFrom(rstudioapi,sendToConsole)

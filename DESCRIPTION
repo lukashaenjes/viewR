@@ -1,7 +1,7 @@
 Package: viewR
 Title: Interactively invoke the RStudio Data Viewer in a Pipe-Friendly
     Fashion
-Version: 0.3.0
+Version: 0.4.0
 Authors@R: 
   person(given = "Lukas",
          family = "Feick",
